@@ -69,10 +69,10 @@ Results go to `reports/validation_report.json`, `reports/validation_report.csv` 
 The Streamlit sidebar's **Save as default mapping** button does the same conversion for an uploaded STTM file.
 
 ## Live mode (opt-in)
-Install `pip install -r requirements.txt`, configure environment variables securely, then create `config/sql_query.sql` and `config/cosmos_query.sql` with bounded read-only SELECT queries. Example SQL: `SELECT TOP (100) InvoiceNumber, Voucher, Amount, ApprovalStatus, DueDate FROM dbo.YourTable WHERE InvoiceNumber IN ('INV001','INV002')`. Example Cosmos SQL: `SELECT c.invoice, c.voucher, c.payment, c.status FROM c WHERE c.invoice.number IN ('INV001','INV002')`. Replace example schema with your actual schema. Review both queries and access permissions before running:
+Source and Target are both Cosmos DB. Install `pip install -r requirements.txt`, securely set the `SOURCE_COSMOS_*` and `TARGET_COSMOS_*` environment variables listed in `.env.example`, then create `config/source_query.sql` and `config/target_query.sql` with bounded read-only Cosmos SQL queries. Example Source query: `SELECT TOP 100 c.InvoiceNumber, c.Voucher, c.Amount, c.ApprovalStatus, c.DueDate FROM c WHERE c.InvoiceNumber IN ('INV001','INV002')`. Example Target query: `SELECT c.invoice, c.voucher, c.payment, c.status FROM c WHERE c.invoice.number IN ('INV001','INV002')`. Replace example schema with your actual schema. Review both queries and access permissions before running:
 
 ```powershell
-python -m src.main --mode live --source-query-file config/sql_query.sql --target-query-file config/cosmos_query.sql
+python -m src.main --mode live --source-query-file config/source_query.sql --target-query-file config/target_query.sql
 ```
 
 Note: `python-dotenv` is optional; this sample reads environment variables already set in your shell. Do not commit credentials, actual customer records, or production exports. Use a least-privilege read-only identity and restrict query size. For large datasets, implement pagination and streaming before production use. The validator flags duplicates but does not compare all duplicated rows.

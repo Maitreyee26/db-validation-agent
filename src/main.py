@@ -108,9 +108,9 @@ def main():
         else:
             if not args.source_query_file or not args.target_query_file:
                 parser.error('Live mode requires both --source-query-file and --target-query-file')
-            from .connectors import read_sql, read_cosmos
-            source = read_sql(Path(args.source_query_file).read_text())
-            target = read_cosmos(Path(args.target_query_file).read_text())
+            from .connectors import read_cosmos
+            source = read_cosmos(Path(args.source_query_file).read_text(), 'SOURCE')
+            target = read_cosmos(Path(args.target_query_file).read_text(), 'TARGET')
             source_label = f'live query {args.source_query_file}'
             target_label = f'live query {args.target_query_file}'
     except (OSError, ValueError, UnicodeError) as exc:
