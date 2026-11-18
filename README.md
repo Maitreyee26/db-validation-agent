@@ -1,5 +1,7 @@
 # Source proxy + Target Proxy Validation & Defect Creation Agent
 
+A read-only data validation agent that compares Source Proxy and Target Proxy records field by field using an STTM mapping, including transformation rules. It reports matches and mismatches, including missing or extra records, duplicate business keys, null and data-type differences. For each failure it drafts a defect with exact record IDs and evidence. It never modifies data, and no defect is filed until a user approves it.
+
 ## Requirements
 Python 3.10+ and Claude Code installed. The sample needs no database credentials.
 

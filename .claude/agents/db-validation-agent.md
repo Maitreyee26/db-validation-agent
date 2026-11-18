@@ -1,6 +1,6 @@
 ---
 name: db-validation-agent
-description: Read-only reconciliation of Source json and Target json data using field mappings and deterministic Python comparisons. Generates structured defect drafts for failed validations.
+description: Read-only QA agent that reconciles Source Proxy and Target Proxy data using STTM field mappings, flags mismatches, and generates defect drafts for review.
 tools: Read, Grep, Glob, Bash
 ---
 
