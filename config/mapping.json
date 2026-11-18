@@ -1,0 +1,33 @@
+{
+  "key": {
+    "source": "InvoiceNumber",
+    "target": "invoice.number"
+  },
+  "fields": [
+    {
+      "source": "InvoiceNumber",
+      "target": "invoice.number",
+      "type": "string"
+    },
+    {
+      "source": "Voucher",
+      "target": "voucher",
+      "type": "string"
+    },
+    {
+      "source": "Amount",
+      "target": "payment.amount",
+      "type": "decimal"
+    },
+    {
+      "source": "ApprovalStatus",
+      "target": "status",
+      "type": "string"
+    },
+    {
+      "source": "DueDate",
+      "target": "payment.dueDate",
+      "type": "date"
+    }
+  ]
+}

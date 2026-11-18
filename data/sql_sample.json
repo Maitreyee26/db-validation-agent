@@ -1,0 +1,23 @@
+[
+  {
+    "InvoiceNumber": "INV001",
+    "Voucher": "PRV001",
+    "Amount": "1500.00",
+    "ApprovalStatus": "Approved",
+    "DueDate": "2026-11-10"
+  },
+  {
+    "InvoiceNumber": "INV002",
+    "Voucher": "PRV002",
+    "Amount": "250.00",
+    "ApprovalStatus": "Approved",
+    "DueDate": "2026-11-12"
+  },
+  {
+    "InvoiceNumber": "INV003",
+    "Voucher": "PRV003",
+    "Amount": "99.00",
+    "ApprovalStatus": "Pending",
+    "DueDate": "2026-11-14"
+  }
+]

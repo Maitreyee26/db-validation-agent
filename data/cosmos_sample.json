@@ -1,0 +1,35 @@
+[
+  {
+    "invoice": {
+      "number": "INV001"
+    },
+    "voucher": "PRV001",
+    "payment": {
+      "amount": 1400,
+      "dueDate": "2026-11-10"
+    },
+    "status": "Approved"
+  },
+  {
+    "invoice": {
+      "number": "INV002"
+    },
+    "voucher": "PRV002",
+    "payment": {
+      "amount": 250,
+      "dueDate": "2026-11-12"
+    },
+    "status": "Approved"
+  },
+  {
+    "invoice": {
+      "number": "INV004"
+    },
+    "voucher": "PRV004",
+    "payment": {
+      "amount": 50,
+      "dueDate": "2026-11-15"
+    },
+    "status": "Pending"
+  }
+]
