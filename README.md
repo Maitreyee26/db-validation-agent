@@ -1,4 +1,4 @@
-# SQL Server + Cosmos DB Validation Agent
+# Source proxy + Target Proxy Validation & Defect Creation Agent
 
 ## Requirements
 Python 3.10+ and Claude Code installed. The sample needs no database credentials.
